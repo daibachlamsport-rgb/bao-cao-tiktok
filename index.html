@@ -1,0 +1,301 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=1100"><title>Tình trạng cửa hàng TikTok</title></head><body><meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{
+  --bg:#f3f4f8;--card:#ffffff;--fg:#14161c;--muted:#6b7180;--line:#e6e8ef;
+  --ok:#15803d;--ok-bg:#dcfce7;--bad:#c2410c;--bad-bg:#ffedd5;
+  --accent:#4338ca;--accent-2:#0ea5e9;--track:#eef0f5;--shadow:0 1px 2px rgba(20,22,28,.05),0 4px 16px rgba(20,22,28,.06);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1117;--card:#181b24;--fg:#eef0f6;--muted:#9aa1b2;--line:#262a36;
+  --ok:#4ade80;--ok-bg:#14532d;--bad:#fb923c;--bad-bg:#7c2d12;
+  --accent:#a5b4fc;--accent-2:#38bdf8;--track:#232735;--shadow:0 1px 2px rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1117;--card:#181b24;--fg:#eef0f6;--muted:#9aa1b2;--line:#262a36;
+  --ok:#4ade80;--ok-bg:#14532d;--bad:#fb923c;--bad-bg:#7c2d12;
+  --accent:#a5b4fc;--accent-2:#38bdf8;--track:#232735;--shadow:0 1px 2px rgba(0,0,0,.4);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+.hero{background:linear-gradient(135deg,#4338ca 0%,#0ea5e9 100%);color:#fff;padding:28px max(16px,env(safe-area-inset-right,0px)) 56px max(16px,env(safe-area-inset-left,0px))}
+.hero-in{max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between}
+.hero h1{font-size:24px;line-height:1.2;margin:0 0 4px;font-weight:700;letter-spacing:-.01em}
+.hero p{margin:0;opacity:.85}
+.score{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:12px 18px;min-width:150px}
+.score .k{font-size:12px;opacity:.85;text-transform:uppercase;letter-spacing:.06em}
+.score .v{font-size:28px;font-weight:700;font-variant-numeric:tabular-nums}
+.score .s{font-size:12px;opacity:.9}
+.wrap{max-width:1080px;margin:-36px auto 0;padding:0 max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px));display:grid;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);min-width:0}
+.card h2{font-size:15px;margin:0 0 4px;font-weight:650}
+.card .hint{color:var(--muted);font-size:12px;margin:0 0 14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px;min-width:0}
+.kpi .lbl{color:var(--muted);font-size:12.5px;font-weight:550;line-height:1.35}
+.kpi .n{font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.kpi .n small{font-size:14px;font-weight:600;color:var(--muted);margin-left:2px}
+.bar{height:6px;border-radius:99px;background:var(--track);overflow:hidden;margin-top:4px}
+.bar i{display:block;height:100%;border-radius:99px}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.chip{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.chip.ok{color:var(--ok);background:var(--ok-bg)}
+.chip.bad{color:var(--bad);background:var(--bad-bg)}
+.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}
+@media (max-width:820px){.grid2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th{font-size:12px;color:var(--muted);font-weight:600;text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);text-transform:uppercase;letter-spacing:.04em}
+td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13.5px}
+tr:last-child td{border-bottom:0}
+.tbl{overflow-x:auto;margin:0 -4px}
+ul.rules{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+ul.rules li{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;background:var(--track);border-radius:12px;padding:10px 12px}
+ul.rules b{color:var(--accent);font-variant-numeric:tabular-nums;min-width:52px}
+.note{color:var(--muted);font-size:12px;margin:10px 0 0}
+svg text{fill:var(--muted);font-size:12px}
+svg .lab{fill:var(--fg);font-weight:600}
+.footer{color:var(--muted);font-size:12px;text-align:center;padding:4px 0}
+.late{border-left:4px solid var(--bad)}
+.late-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.late-head .hint{margin:0}
+.late-total{text-align:right}
+.late-total span{font-size:34px;font-weight:700;color:var(--bad);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.late-total small{color:var(--muted);margin-left:6px;font-size:14px}
+</style>
+
+<div class="hero">
+  <div class="hero-in">
+    <div>
+      <h1>Tình trạng cửa hàng TikTok</h1>
+      <p>Li-Ning Đông Anh · so với mục tiêu quy định của TikTok Shop · dữ liệu ngày 12/11/2026</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="kpis" id="kpis"></section>
+
+  <section class="card late">
+    <div class="late-head">
+      <div>
+        <h2>Đơn xử lý muộn · không đạt yêu cầu</h2>
+        <p class="hint">Đơn chưa chuyển “Đã gửi” đúng hạn, theo ngày đặt. Trang chi tiết Seller Center ghi nhận 188 đơn.</p>
+      </div>
+      <div class="late-total"><span id="late-n" data-source="late_daily" data-field="so_don_muon">—</span><small>đơn</small></div>
+    </div>
+    <div id="late-chart"></div>
+  </section>
+
+  <div class="grid2">
+    <section class="card">
+      <h2>Số lượng theo nhóm hàng</h2>
+      <p class="hint">Đơn và sản phẩm trong 188 đơn muộn.</p>
+      <div id="cat-chart"></div>
+    </section>
+    <section class="card">
+      <h2>Sản phẩm bị muộn nhiều nhất</h2>
+      <p class="hint">Top 15 theo số sản phẩm.</p>
+      <div class="tbl"><table id="top-table"></table></div>
+    </section>
+  </div>
+
+  <div class="grid2">
+    <section class="card">
+      <h2>Thực tế so với mục tiêu</h2>
+      <p class="hint">Vạch đứng là mục tiêu. Xanh là đạt, cam là chưa đạt.</p>
+      <div id="chart"></div>
+    </section>
+
+    <section class="card">
+      <h2>Quy tắc gửi hàng</h2>
+      <p class="hint">Theo tài liệu TikTok Shop Seller University</p>
+      <ul class="rules">
+        <li><b>14:00</b><span>Đơn đặt trước 14:00: chuyển “Đã gửi” trước 23:59 cùng ngày.</span></li>
+        <li><b>23:59</b><span>Đơn đặt sau 14:00: chuyển “Đã gửi” trước 23:59 ngày làm việc kế tiếp.</span></li>
+        <li><b>20:00</b><span>Bàn giao cho đơn vị vận chuyển trước 20:00, giữ bằng chứng bàn giao.</span></li>
+        <li><b>14h · 18h</b><span>Kiểm tra mục “Cần vận chuyển” hai lần mỗi ngày.</span></li>
+        <li><b>Kênh</b><span>Không đưa số điện thoại, Zalo hay link ngoài TikTok vào bình luận và tin nhắn.</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="grid2">
+    <section class="card">
+      <h2>Xu hướng gửi hàng muộn</h2>
+      <p class="hint">Mỗi ngày bổ sung một điểm. Mục tiêu 4%.</p>
+      <div id="trend"></div>
+    </section>
+
+    <section class="card">
+      <h2>Lỗi và cảnh báo đang mắc</h2>
+      <p class="hint">Gồm giới hạn đơn, cảnh báo và vi phạm.</p>
+      <div class="tbl"><table id="issues"></table></div>
+    </section>
+  </div>
+
+  <div class="footer">Báo cáo nội bộ · dữ liệu nhập tay từ Seller Center</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script><script>window.DATA={"metrics":[{"chi_so":"Gửi hàng muộn","gia_tri":"27.53","muc_tieu":"4","chieu":"max","don_vi":"%","nhom":"Gửi hàng"},{"chi_so":"Gửi hàng nhanh","gia_tri":"69.72","muc_tieu":"90","chieu":"min","don_vi":"%","nhom":"Gửi hàng"},{"chi_so":"Hủy đơn do lỗi người bán","gia_tri":"0","muc_tieu":"2.5","chieu":"max","don_vi":"%","nhom":"Đơn hàng"},{"chi_so":"Gửi muộn đơn Hỏa tốc","gia_tri":"0","muc_tieu":"5","chieu":"max","don_vi":"%","nhom":"Gửi hàng"},{"chi_so":"Gửi muộn đơn Trong ngày","gia_tri":"0","muc_tieu":"5","chieu":"max","don_vi":"%","nhom":"Gửi hàng"},{"chi_so":"Đánh giá tiêu cực liên quan người bán","gia_tri":"0.08","muc_tieu":"0.5","chieu":"max","don_vi":"%","nhom":"Đánh giá"},{"chi_so":"Hoàn tiền và trả hàng do lỗi người bán","gia_tri":"0.16","muc_tieu":"1.5","chieu":"max","don_vi":"%","nhom":"Đơn hàng"},{"chi_so":"Thời gian phản hồi trung bình","gia_tri":"1.49","muc_tieu":"1","chieu":"max","don_vi":"giờ","nhom":"Chăm sóc khách"},{"chi_so":"Tỷ lệ trả lời trong 12 giờ","gia_tri":"95.07","muc_tieu":"85","chieu":"min","don_vi":"%","nhom":"Chăm sóc khách"},{"chi_so":"Tỷ lệ hài lòng qua chat","gia_tri":"88.89","muc_tieu":"70","chieu":"min","don_vi":"%","nhom":"Chăm sóc khách"}],"daily":[{"ngay":"2026-11-12","gui_muon_pct":"27.53","gui_nhanh_pct":"69.72","phan_hoi_gio":"1.49"}],"issues":[{"loai":"Giới hạn đơn hàng","noi_dung":"Gửi hàng muộn cao (4 lần)","ngay":"26/10/2026","trang_thai":"Đã hết hạn 1 lần; 2 lần khiếu nại không thành công"},{"loai":"Cảnh báo","noi_dung":"Phản hồi tiêu cực về chất lượng hoặc tỷ lệ xử lý đơn","ngay":"16/07/2026","trang_thai":"Chưa đọc"},{"loai":"Cảnh báo","noi_dung":"Sản phẩm bị hạn chế liên kết do tỷ lệ trả hàng cao","ngay":"14/06/2026","trang_thai":"Chưa đọc"},{"loai":"Cảnh báo","noi_dung":"Phản hồi tiêu cực về cảm nhận đơn hàng","ngay":"31/05/2026","trang_thai":"Chưa đọc"},{"loai":"Vi phạm","noi_dung":"Chuyển hướng khách ra khỏi nền tảng (5 lần)","ngay":"22/11/2025 - 19/01/2026","trang_thai":"Đã hết hạn"},{"loai":"Vi phạm","noi_dung":"Thiếu ủy quyền thương hiệu","ngay":"18/05/2026","trang_thai":"Đã hết hạn"}],"late_daily":[{"ngay":"31/10","so_don_muon":"1"},{"ngay":"01/11","so_don_muon":"17"},{"ngay":"02/11","so_don_muon":"50"},{"ngay":"03/11","so_don_muon":"61"},{"ngay":"04/11","so_don_muon":"40"},{"ngay":"05/11","so_don_muon":"15"},{"ngay":"06/11","so_don_muon":"1"},{"ngay":"07/11","so_don_muon":"3"}],"late_category":[{"nhom":"Vợt","so_don":"93","so_san_pham":"94"},{"nhom":"Giày","so_don":"52","so_san_pham":"53"},{"nhom":"Áo","so_don":"32","so_san_pham":"33"},{"nhom":"Phụ kiện","so_don":"5","so_san_pham":"5"},{"nhom":"Quần","so_don":"3","so_san_pham":"3"},{"nhom":"Khác","so_don":"3","so_san_pham":"3"}],"late_top":[{"san_pham":"Vợt cầu lông Li-Ning 3D CALIBAR 300 series","so_don":"20","so_san_pham":"20"},{"san_pham":"Vợt cầu lông Li-Ning AXFORCE CANNON (4U 5U)","so_don":"18","so_san_pham":"19"},{"san_pham":"Vợt Cầu Lông Li-Ning Axforce 80 Gen 2 P-AYPW049-4V","so_don":"10","so_san_pham":"10"},{"san_pham":"Giày cầu lông chính hãng Li-Ning THUNDER 2 PRO P-AYAW001","so_don":"7","so_san_pham":"7"},{"san_pham":"Giày cầu lông Li-Ning JF LITE AYTU025","so_don":"5","so_san_pham":"5"},{"san_pham":"Giày cầu lông chính hãng Li-Ning ALMIGHTY V 1.0 AYTT001","so_don":"5","so_san_pham":"5"},{"san_pham":"Vợt Cầu Lông Halbertec 3000 Li-Ning P-AYPV011-4","so_don":"5","so_san_pham":"5"},{"san_pham":"Áo Cầu Lông Pickleball Unisex Li-Ning P-AHSW713","so_don":"5","so_san_pham":"5"},{"san_pham":"Giày cầu lông chính hãng Li-Ning SAGA 3 LITE AYTV003","so_don":"4","so_san_pham":"4"},{"san_pham":"Vợt cầu lông Li-Ning Aeronaut 6000","so_don":"4","so_san_pham":"4"},{"san_pham":"Áo cầu lông nam Li-Ning P-AAYW867-1V","so_don":"4","so_san_pham":"4"},{"san_pham":"Áo cầu lông nam Li-Ning P-AAYW115 LN DRY","so_don":"4","so_san_pham":"4"},{"san_pham":"Giày Cầu Lông Nam Và Nữ Li-Ning SONIC BOOM VI P-AYZW014","so_don":"4","so_san_pham":"4"},{"san_pham":"Giày Cầu Lông Pickleball Nam Và Nữ Li-Ning SHI YUQI P-AYZW007","so_don":"4","so_san_pham":"4"},{"san_pham":"[BST LN X SHIDA] Áo Cầu Lông Nữ Li-Ning P-AAYW210","so_don":"4","so_san_pham":"4"}]};window.dash={data:function(id){return {status:"ok",data:(DATA[id]||[])}},onData:function(f){f()}};</script><script>
+function el(tag, cls, s){ const e = document.createElement(tag); if(cls) e.className = cls; if(s!=null) e.textContent = s; return e; }
+function unit(u){ return u === '%' ? '%' : ' ' + u; }
+
+function renderKpis(rows){
+  const box = document.getElementById('kpis');
+  box.textContent = '';
+  rows.forEach(r => {
+    const v = +r.gia_tri, t = +r.muc_tieu;
+    const ok = r.chieu === 'max' ? v <= t : v >= t;
+    const card = el('div','kpi');
+    card.append(el('div','lbl', r.chi_so));
+    const n = el('div','n', String(v));
+    n.append(el('small', null, unit(r.don_vi).trim()));
+    n.setAttribute('data-source','metrics'); n.setAttribute('data-field','gia_tri');
+    n.setAttribute('data-where','chi_so=' + r.chi_so);
+    card.append(n);
+    const max = Math.max(v, t) || 1;
+    const track = el('div','bar');
+    const fill = el('i');
+    fill.style.width = Math.min(100, (v / max) * 100) + '%';
+    fill.style.background = ok ? 'var(--ok)' : 'var(--bad)';
+    track.append(fill);
+    card.append(track);
+    const meta = el('div','meta');
+    meta.append(el('span', null, (r.chieu === 'max' ? 'Mục tiêu ≤ ' : 'Mục tiêu ≥ ') + t + unit(r.don_vi)));
+    meta.append(el('span', 'chip ' + (ok ? 'ok' : 'bad'), ok ? '✓ Đạt' : '✕ Chưa đạt'));
+    card.append(meta);
+    box.append(card);
+  });
+}
+
+function renderChart(rows){
+  const host = document.getElementById('chart');
+  host.textContent = '';
+  const W = Math.max(300, host.clientWidth || 520), rowH = 44, left = 0, right = 56;
+  const H = rows.length * rowH + 8;
+  const maxV = (d3.max(rows, r => Math.max(+r.gia_tri, +r.muc_tieu)) || 1) * 1.08;
+  const x = d3.scaleLinear().domain([0, maxV]).range([left, W - right]);
+  const svg = d3.select(host).append('svg').attr('viewBox', '0 0 '+W+' '+H).attr('width','100%').attr('role','img').attr('aria-label','Biểu đồ thực tế so với mục tiêu');
+  const g = svg.selectAll('g.row').data(rows).join('g').attr('transform', (d,i) => 'translate(0,' + (i*rowH) + ')');
+  g.append('rect').attr('x', 0).attr('y', 18).attr('width', W - right).attr('height', 8).attr('rx', 4).attr('fill', 'var(--track)');
+  g.append('rect').attr('x', 0).attr('y', 18).attr('height', 8).attr('rx', 4)
+    .attr('width', d => Math.max(4, x(+d.gia_tri)))
+    .attr('fill', d => { const ok = d.chieu === 'max' ? +d.gia_tri <= +d.muc_tieu : +d.gia_tri >= +d.muc_tieu; return ok ? 'var(--ok)' : 'var(--bad)'; });
+  g.append('line').attr('x1', d => x(+d.muc_tieu)).attr('x2', d => x(+d.muc_tieu)).attr('y1', 12).attr('y2', 32)
+    .attr('stroke', 'var(--fg)').attr('stroke-width', 2).attr('stroke-linecap','round');
+  g.append('text').attr('class','lab').attr('x', 0).attr('y', 11).text(d => d.chi_so);
+  g.append('text').attr('x', W).attr('y', 11).attr('text-anchor','end').attr('class','lab')
+    .text(d => d.gia_tri + unit(d.don_vi));
+}
+
+function renderTrend(rows){
+  const host = document.getElementById('trend');
+  host.textContent = '';
+  const data = rows.map(r => ({d: new Date(r.ngay), v: +r.gui_muon_pct})).filter(r => !isNaN(r.d));
+  if (!data.length) return;
+  const W = Math.max(300, host.clientWidth || 520), H = 210, m = {l: 36, r: 16, t: 18, b: 30};
+  const svg = d3.select(host).append('svg').attr('viewBox','0 0 '+W+' '+H).attr('width','100%');
+  const ext = d3.extent(data, d => d.d);
+  const x = d3.scaleTime().domain(ext[0].getTime() === ext[1].getTime() ? [new Date(ext[0].getTime()-864e5), new Date(ext[1].getTime()+864e5)] : ext).range([m.l, W - m.r]);
+  const y = d3.scaleLinear().domain([0, Math.max(10, d3.max(data, d => d.v) * 1.2)]).range([H - m.b, m.t]);
+  svg.append('g').attr('class','grid').selectAll('line').data(y.ticks(4)).join('line')
+    .attr('x1', m.l).attr('x2', W - m.r).attr('y1', d => y(d)).attr('y2', d => y(d)).attr('stroke','var(--line)');
+  svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(4)).attr('y2', y(4))
+    .attr('stroke','var(--ok)').attr('stroke-width',2).attr('stroke-dasharray','5 5');
+  svg.append('text').attr('x', W - m.r).attr('y', y(4) - 6).attr('text-anchor','end').attr('class','lab').attr('fill','var(--ok)').text('Mục tiêu 4%');
+  svg.append('g').attr('transform','translate(0,'+(H-m.b)+')').call(d3.axisBottom(x).ticks(4).tickSizeOuter(0)).selectAll('text').attr('fill','var(--muted)');
+  svg.append('g').attr('transform','translate('+m.l+',0)').call(d3.axisLeft(y).ticks(4).tickFormat(d => d + '%').tickSizeOuter(0)).selectAll('text').attr('fill','var(--muted)');
+  svg.selectAll('circle').data(data).join('circle').attr('cx', d => x(d.d)).attr('cy', d => y(d.v)).attr('r', 6).attr('fill','var(--bad)').attr('stroke','var(--card)').attr('stroke-width',3);
+  svg.selectAll('.lbl').data(data).join('text').attr('class','lab').attr('x', d => x(d.d)).attr('y', d => y(d.v) - 12).attr('text-anchor','middle').text(d => d.v + '%');
+}
+
+function renderIssues(rows){
+  const t = document.getElementById('issues');
+  t.textContent = '';
+  const head = el('tr');
+  ['Loại','Nội dung','Thời gian','Trạng thái'].forEach(h => head.append(el('th', null, h)));
+  t.append(head);
+  rows.forEach(r => {
+    const tr = el('tr');
+    const st = (r.trang_thai || '').toLowerCase();
+    const bad = st.indexOf('hết hạn') < 0;
+    tr.append(el('td', null, r.loai), el('td', null, r.noi_dung), el('td', null, r.ngay));
+    const td = el('td');
+    td.append(el('span', 'chip ' + (bad ? 'bad' : 'ok'), r.trang_thai));
+    tr.append(td);
+    t.append(tr);
+  });
+}
+
+function renderLate(rows){
+  const host = document.getElementById('late-chart');
+  host.textContent = '';
+  const total = rows.reduce((s, r) => s + (+r.so_don_muon || 0), 0);
+  document.getElementById('late-n').textContent = String(total);
+  const W = Math.max(300, host.clientWidth || 520), H = 200, m = {l: 36, r: 12, t: 14, b: 30};
+  const x = d3.scaleBand().domain(rows.map(r => r.ngay)).range([m.l, W - m.r]).padding(0.25);
+  const y = d3.scaleLinear().domain([0, (d3.max(rows, r => +r.so_don_muon) || 1) * 1.15]).range([H - m.b, m.t]);
+  const svg = d3.select(host).append('svg').attr('viewBox', '0 0 ' + W + ' ' + H).attr('width', '100%').attr('role','img').attr('aria-label','Số đơn muộn theo ngày');
+  svg.append('g').selectAll('line').data(y.ticks(4)).join('line')
+    .attr('x1', m.l).attr('x2', W - m.r).attr('y1', d => y(d)).attr('y2', d => y(d)).attr('stroke', 'var(--line)');
+  svg.selectAll('rect').data(rows).join('rect')
+    .attr('x', d => x(d.ngay)).attr('width', x.bandwidth()).attr('y', d => y(+d.so_don_muon))
+    .attr('height', d => y(0) - y(+d.so_don_muon)).attr('rx', 5).attr('fill', 'var(--bad)')
+    .attr('data-source', 'late_daily').attr('data-field', 'so_don_muon').attr('data-where', d => 'ngay=' + d.ngay);
+  svg.selectAll('.v').data(rows).join('text').attr('class','lab')
+    .attr('x', d => x(d.ngay) + x.bandwidth() / 2).attr('y', d => y(+d.so_don_muon) - 6)
+    .attr('text-anchor','middle').text(d => d.so_don_muon);
+  svg.append('g').attr('transform', 'translate(0,' + (H - m.b) + ')').call(d3.axisBottom(x).tickSizeOuter(0))
+    .selectAll('text').attr('fill', 'var(--muted)');
+  svg.append('g').attr('transform', 'translate(' + m.l + ',0)').call(d3.axisLeft(y).ticks(4).tickSizeOuter(0))
+    .selectAll('text').attr('fill', 'var(--muted)');
+}
+
+function renderCat(rows){
+  const host = document.getElementById('cat-chart');
+  host.textContent = '';
+  const W = Math.max(300, host.clientWidth || 480), rowH = 40, left = 96, right = 70;
+  const H = rows.length * rowH + 4;
+  const x = d3.scaleLinear().domain([0, (d3.max(rows, r => +r.so_san_pham) || 1) * 1.1]).range([left, W - right]);
+  const svg = d3.select(host).append('svg').attr('viewBox', '0 0 ' + W + ' ' + H).attr('width','100%').attr('role','img').attr('aria-label','Số sản phẩm theo nhóm hàng');
+  const g = svg.selectAll('g').data(rows).join('g').attr('transform', (d,i) => 'translate(0,' + (i*rowH) + ')');
+  g.append('text').attr('class','lab').attr('x', 0).attr('y', 20).text(d => d.nhom);
+  g.append('rect').attr('x', left).attr('y', 8).attr('height', 22).attr('rx', 6).attr('width', x.range()[1] - left).attr('fill', 'var(--track)');
+  g.append('rect').attr('x', left).attr('y', 8).attr('height', 22).attr('rx', 6).attr('width', d => Math.max(4, x(+d.so_san_pham) - left)).attr('fill', 'var(--bad)')
+    .attr('data-source', 'late_category').attr('data-field', 'so_san_pham').attr('data-where', d => 'nhom=' + d.nhom);
+  g.append('text').attr('class','lab').attr('x', W).attr('y', 24).attr('text-anchor','end')
+    .text(d => d.so_san_pham + ' SP · ' + d.so_don + ' đơn');
+}
+
+function renderTop(rows){
+  const t = document.getElementById('top-table');
+  t.textContent = '';
+  const head = el('tr');
+  ['Sản phẩm','Đơn','Số lượng'].forEach((h,i) => { const th = el('th', null, h); if (i) th.style.textAlign = 'right'; head.append(th); });
+  t.append(head);
+  rows.forEach(r => {
+    const tr = el('tr');
+    tr.append(el('td', null, r.san_pham));
+    const a = el('td', null, r.so_don); a.style.textAlign = 'right'; a.style.fontVariantNumeric = 'tabular-nums';
+    const b = el('td', null, r.so_san_pham); b.style.textAlign = 'right'; b.style.fontWeight = '650';
+    b.setAttribute('data-source','late_top'); b.setAttribute('data-field','so_san_pham');
+    b.setAttribute('data-where','san_pham=' + r.san_pham);
+    tr.append(a, b);
+    t.append(tr);
+  });
+}
+
+function render(){
+  const cat = dash.data('late_category');
+  const top = dash.data('late_top');
+  if (cat.status === 'ok' && cat.data && cat.data.length) renderCat(cat.data);
+  if (top.status === 'ok' && top.data && top.data.length) renderTop(top.data);
+  const m = dash.data('metrics');
+  const d = dash.data('daily');
+  const i = dash.data('issues');
+  const late = dash.data('late_daily');
+  if (late.status === 'ok' && late.data && late.data.length) renderLate(late.data);
+  if (m.status === 'ok' && m.data && m.data.length) { renderKpis(m.data); renderChart(m.data); }
+  if (d.status === 'ok' && d.data && d.data.length) renderTrend(d.data);
+  if (i.status === 'ok' && i.data && i.data.length) renderIssues(i.data);
+}
+dash.onData(render);
+</script>
+</body></html>
