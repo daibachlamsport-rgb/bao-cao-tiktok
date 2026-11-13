@@ -11,7 +11,7 @@ window.DATA={
   {
    "chi_so": "Gửi hàng nhanh",
    "gia_tri": "69.72",
-   "muc_tieu": "90",
+   "muc_tieu": "85",
    "chieu": "min",
    "don_vi": "%",
    "nhom": "Gửi hàng"
