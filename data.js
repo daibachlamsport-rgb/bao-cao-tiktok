@@ -2,7 +2,7 @@ window.DATA={
  "metrics": [
   {
    "chi_so": "Gửi hàng muộn",
-   "gia_tri": "7.48",
+   "gia_tri": "15.87",
    "muc_tieu": "4",
    "chieu": "max",
    "don_vi": "%",
@@ -10,7 +10,7 @@ window.DATA={
   },
   {
    "chi_so": "Gửi hàng nhanh",
-   "gia_tri": "75.98",
+   "gia_tri": "83.88",
    "muc_tieu": "90",
    "chieu": "min",
    "don_vi": "%",
@@ -18,7 +18,7 @@ window.DATA={
   },
   {
    "chi_so": "Hủy đơn do lỗi người bán",
-   "gia_tri": "0.09",
+   "gia_tri": "0",
    "muc_tieu": "2.5",
    "chieu": "max",
    "don_vi": "%",
@@ -42,7 +42,7 @@ window.DATA={
   },
   {
    "chi_so": "Đánh giá tiêu cực liên quan người bán",
-   "gia_tri": "0.15",
+   "gia_tri": "0.08",
    "muc_tieu": "0.5",
    "chieu": "max",
    "don_vi": "%",
@@ -50,7 +50,7 @@ window.DATA={
   },
   {
    "chi_so": "Hoàn tiền và trả hàng do lỗi người bán",
-   "gia_tri": "0.15",
+   "gia_tri": "0.16",
    "muc_tieu": "1.5",
    "chieu": "max",
    "don_vi": "%",
@@ -58,7 +58,7 @@ window.DATA={
   },
   {
    "chi_so": "Thời gian phản hồi trung bình",
-   "gia_tri": "1.44",
+   "gia_tri": "1.43",
    "muc_tieu": "1",
    "chieu": "max",
    "don_vi": "giờ",
@@ -66,7 +66,7 @@ window.DATA={
   },
   {
    "chi_so": "Tỷ lệ trả lời trong 12 giờ",
-   "gia_tri": "95.96",
+   "gia_tri": "96.24",
    "muc_tieu": "85",
    "chieu": "min",
    "don_vi": "%",
@@ -74,7 +74,7 @@ window.DATA={
   },
   {
    "chi_so": "Tỷ lệ hài lòng qua chat",
-   "gia_tri": "76.06",
+   "gia_tri": "73.24",
    "muc_tieu": "70",
    "chieu": "min",
    "don_vi": "%",
@@ -93,11 +93,23 @@ window.DATA={
    "gui_muon_pct": "7.48",
    "gui_nhanh_pct": "75.98",
    "phan_hoi_gio": "1.44"
+  },
+  {
+   "ngay": "2026-11-24",
+   "gui_muon_pct": "15.87",
+   "gui_nhanh_pct": "83.88",
+   "phan_hoi_gio": "1.43"
   }
  ],
  "issues": [
   {
    "loai": "Giới hạn đơn hàng",
+   "noi_dung": "Gửi hàng muộn cao (Giới hạn đơn hàng)",
+   "ngay": "23/11/2026",
+   "trang_thai": "Chờ xử lý - chưa khiếu nại (còn ~33 giờ khi đọc)"
+  },
+  {
+   "loai": "Vi phạm",
    "noi_dung": "Gửi hàng muộn cao (lần gần nhất)",
    "ngay": "26/10/2026",
    "trang_thai": "Đã hết hạn"
@@ -165,80 +177,72 @@ window.DATA={
  ],
  "late_daily": [
   {
-   "ngay": "07/11",
-   "so_don_muon": "2"
-  },
-  {
-   "ngay": "08/11",
-   "so_don_muon": "11"
-  },
-  {
-   "ngay": "09/11",
-   "so_don_muon": "6"
-  },
-  {
-   "ngay": "10/11",
-   "so_don_muon": "5"
-  },
-  {
-   "ngay": "11/11",
-   "so_don_muon": "17"
-  },
-  {
-   "ngay": "12/11",
-   "so_don_muon": "3"
-  },
-  {
-   "ngay": "13/11",
+   "ngay": "14/11",
    "so_don_muon": "4"
   },
   {
-   "ngay": "14/11",
-   "so_don_muon": "2"
+   "ngay": "15/11",
+   "so_don_muon": "18"
+  },
+  {
+   "ngay": "16/11",
+   "so_don_muon": "18"
+  },
+  {
+   "ngay": "17/11",
+   "so_don_muon": "18"
+  },
+  {
+   "ngay": "18/11",
+   "so_don_muon": "19"
+  },
+  {
+   "ngay": "19/11",
+   "so_don_muon": "9"
   }
  ],
  "late_category": [
   {
-   "nhom": "Vợt",
-   "so_don": "20",
-   "so_san_pham": "21"
-  },
-  {
    "nhom": "Giày",
-   "so_don": "16",
-   "so_san_pham": "16"
+   "so_don": "40",
+   "so_san_pham": "40"
   },
   {
-   "nhom": "Quần",
-   "so_don": "7",
-   "so_san_pham": "9"
+   "nhom": "Vợt",
+   "so_don": "23",
+   "so_san_pham": "23"
   },
   {
-   "nhom": "Phụ kiện",
-   "so_don": "6",
-   "so_san_pham": "6"
-  },
-  {
-   "nhom": "Khác",
-   "so_don": "4",
-   "so_san_pham": "5"
+   "nhom": "Quần áo",
+   "so_don": "23",
+   "so_san_pham": "30"
   }
  ],
  "late_top": [
   {
-   "san_pham": "Vợt cầu lông Li-Ning 3D CALIBAR 300 series",
+   "san_pham": "Giày chạy bộ Nam chính hãng Li-Ning INFINITY 6 ARHW017",
    "so_don": "6",
    "so_san_pham": "6"
   },
   {
-   "san_pham": "[BST LN X SHIDA] Chân Váy Nữ Li-ning P-ASKW440",
-   "so_don": "4",
-   "so_san_pham": "6"
+   "san_pham": "Giày cầu lông, pickleball chính hãng Li-Ning Halberd Strike AYTV021 [ NEW 2026 ]",
+   "so_don": "5",
+   "so_san_pham": "5"
   },
   {
-   "san_pham": "Balo Cầu Lông Chính Hãng Li-Ning China Master P-ABSW235",
-   "so_don": "4",
-   "so_san_pham": "4"
+   "san_pham": "[ BST LN X SHIDA ] Áo Cầu Lông Nữ Chính Hãng Li-Ning P-AAYW210",
+   "so_don": "5",
+   "so_san_pham": "5"
+  },
+  {
+   "san_pham": "Vợt Cầu Lông Halbertec 3000 Chính Hãng Li-Ning P-AYPV011-4",
+   "so_don": "3",
+   "so_san_pham": "3"
+  },
+  {
+   "san_pham": "Vợt cầu lông Li-Ning Halbertec 4000 (4U) P-AYPV009-4V",
+   "so_don": "3",
+   "so_san_pham": "3"
   },
   {
    "san_pham": "Vợt cầu lông Li-ning AXFORCE CANNON PRO Blue & Lava 4U & 5U",
@@ -246,63 +250,53 @@ window.DATA={
    "so_san_pham": "3"
   },
   {
-   "san_pham": "Giày thời trang Nam Chính hãng Li-Ning Soft Go 3 Slip On AGLW009",
+   "san_pham": "Giày chạy bộ Nam chính hãng Li-Ning INFINITY 5 ARHW003 (NEW 2026)",
    "so_don": "3",
    "so_san_pham": "3"
   },
   {
-   "san_pham": "[BST LN X SHIDA] Áo Cầu Lông Nữ Chính Hãng Li-Ning P-AAYW210",
+   "san_pham": "Giày cầu lông chính hãng Li-Ning ALMIGHTY V 2.0 ( 8 Màu )",
    "so_don": "3",
    "so_san_pham": "3"
   },
   {
-   "san_pham": "Khung vợt cầu lông Li-ning Axforce Cannon",
+   "san_pham": "Giày Cầu Lông Chính Hãng Li-Ning Blade 2 SE P-AYTW001 NEW 2026",
+   "so_don": "3",
+   "so_san_pham": "3"
+  },
+  {
+   "san_pham": "Áo cầu lông nam chính hãng Li-Ning P-AAYW115, LN DRY",
+   "so_don": "2",
+   "so_san_pham": "3"
+  },
+  {
+   "san_pham": "Giày cầu lông chính hãng Li-Ning BLADE MAX AYAU003",
    "so_don": "2",
    "so_san_pham": "2"
   },
   {
-   "san_pham": "Giày chạy bộ Nam chính hãng Li-Ning INFINITY 6 ARHW017",
+   "san_pham": "Vợt Cầu Lông WindStorm 79S P-AYPT447-5 (5U) Cán Vợt Thể Thao",
    "so_don": "2",
    "so_san_pham": "2"
   },
   {
-   "san_pham": "Bộ quần áo nỉ thể thao nam chính hãng Li-Ning AWEW003",
+   "san_pham": "Giày cầu lông chính hãng Li-Ning SOUND WAVE IV AYTV015",
    "so_don": "2",
    "so_san_pham": "2"
   },
   {
-   "san_pham": "Giày thời trang nam chính hãng Li-Ning SOFT GO 3 V3 AGLW143",
-   "so_don": "1",
-   "so_san_pham": "1"
+   "san_pham": "Giày Tennis/Pickleball Li-Ning SORTIE SE P-AKPW001 [ NEW 2026 ]",
+   "so_don": "2",
+   "so_san_pham": "2"
   },
   {
-   "san_pham": "Vợt cầu lông Li-Ning HALBERTEC 5000 (3U & 4U)",
-   "so_don": "1",
-   "so_san_pham": "1"
-  },
-  {
-   "san_pham": "Vợt Cầu Lông Li-Ning AXFORCE 90 Loh Kean Yew 2025 P-AYPV001-4",
-   "so_don": "1",
-   "so_san_pham": "1"
-  },
-  {
-   "san_pham": "Vợt cầu lông Li-Ning HALBERTEC MAGE 4U P-AYPW041-4V",
-   "so_don": "1",
-   "so_san_pham": "1"
-  },
-  {
-   "san_pham": "Vợt cầu lông Li-Ning Halbertec MOTOR (4U & 5U)",
-   "so_don": "1",
-   "so_san_pham": "1"
-  },
-  {
-   "san_pham": "Giày Cầu Lông, Pickleball Nam Và Nữ Li-Ning SHI YUQI P-AYZW007",
-   "so_don": "1",
-   "so_san_pham": "1"
+   "san_pham": "Vợt cầu lông chính hãng Li-Ning HALBERTEC 2000 (3u,4U) AYPT377",
+   "so_don": "2",
+   "so_san_pham": "2"
   }
  ],
  "meta": {
-  "ngay_du_lieu": "22/11/2026",
-  "ghi_chu_muon": "50"
+  "ngay_du_lieu": "24/11/2026",
+  "ghi_chu_muon": "86"
  }
 };
