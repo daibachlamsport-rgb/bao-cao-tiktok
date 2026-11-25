@@ -42,7 +42,7 @@ window.DATA={
   },
   {
    "chi_so": "Đánh giá tiêu cực liên quan người bán",
-   "gia_tri": "0.08",
+   "gia_tri": "0.11",
    "muc_tieu": "0.5",
    "chieu": "max",
    "don_vi": "%",
@@ -58,7 +58,7 @@ window.DATA={
   },
   {
    "chi_so": "Thời gian phản hồi trung bình",
-   "gia_tri": "1.43",
+   "gia_tri": "1.46",
    "muc_tieu": "1",
    "chieu": "max",
    "don_vi": "giờ",
@@ -66,7 +66,7 @@ window.DATA={
   },
   {
    "chi_so": "Tỷ lệ trả lời trong 12 giờ",
-   "gia_tri": "96.24",
+   "gia_tri": "96.16",
    "muc_tieu": "85",
    "chieu": "min",
    "don_vi": "%",
@@ -74,7 +74,7 @@ window.DATA={
   },
   {
    "chi_so": "Tỷ lệ hài lòng qua chat",
-   "gia_tri": "73.24",
+   "gia_tri": "73.61",
    "muc_tieu": "70",
    "chieu": "min",
    "don_vi": "%",
@@ -99,6 +99,12 @@ window.DATA={
    "gui_muon_pct": "15.87",
    "gui_nhanh_pct": "83.88",
    "phan_hoi_gio": "1.43"
+  },
+  {
+   "ngay": "2026-11-25",
+   "gui_muon_pct": "15.87",
+   "gui_nhanh_pct": "83.88",
+   "phan_hoi_gio": "1.46"
   }
  ],
  "issues": [
@@ -106,7 +112,7 @@ window.DATA={
    "loai": "Giới hạn đơn hàng",
    "noi_dung": "Gửi hàng muộn cao (Giới hạn đơn hàng)",
    "ngay": "23/11/2026",
-   "trang_thai": "Chờ xử lý - chưa khiếu nại (còn ~33 giờ khi đọc)"
+   "trang_thai": "Chờ xử lý - chưa khiếu nại (còn ~9 giờ khi đọc)"
   },
   {
    "loai": "Vi phạm",
@@ -296,7 +302,7 @@ window.DATA={
   }
  ],
  "meta": {
-  "ngay_du_lieu": "24/11/2026",
+  "ngay_du_lieu": "25/11/2026",
   "ghi_chu_muon": "86"
  }
 };
