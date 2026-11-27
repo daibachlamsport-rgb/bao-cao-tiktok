@@ -58,7 +58,7 @@ window.DATA={
   },
   {
    "chi_so": "Thời gian phản hồi trung bình",
-   "gia_tri": "1.48",
+   "gia_tri": "1.46",
    "muc_tieu": "1",
    "chieu": "max",
    "don_vi": "giờ",
@@ -66,7 +66,7 @@ window.DATA={
   },
   {
    "chi_so": "Tỷ lệ trả lời trong 12 giờ",
-   "gia_tri": "96.01",
+   "gia_tri": "95.91",
    "muc_tieu": "85",
    "chieu": "min",
    "don_vi": "%",
@@ -74,7 +74,7 @@ window.DATA={
   },
   {
    "chi_so": "Tỷ lệ hài lòng qua chat",
-   "gia_tri": "74.67",
+   "gia_tri": "72.73",
    "muc_tieu": "70",
    "chieu": "min",
    "don_vi": "%",
@@ -111,6 +111,12 @@ window.DATA={
    "gui_muon_pct": "15.87",
    "gui_nhanh_pct": "83.88",
    "phan_hoi_gio": "1.48"
+  },
+  {
+   "ngay": "2026-11-27",
+   "gui_muon_pct": "15.87",
+   "gui_nhanh_pct": "83.88",
+   "phan_hoi_gio": "1.46"
   }
  ],
  "issues": [
@@ -308,7 +314,7 @@ window.DATA={
   }
  ],
  "meta": {
-  "ngay_du_lieu": "26/11/2026",
+  "ngay_du_lieu": "27/11/2026",
   "ghi_chu_muon": "86"
  }
 };
