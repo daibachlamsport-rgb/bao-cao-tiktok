@@ -50,7 +50,7 @@ window.DATA={
   },
   {
    "chi_so": "Hoàn tiền và trả hàng do lỗi người bán",
-   "gia_tri": "0.16",
+   "gia_tri": "0.19",
    "muc_tieu": "1.5",
    "chieu": "max",
    "don_vi": "%",
@@ -58,7 +58,7 @@ window.DATA={
   },
   {
    "chi_so": "Thời gian phản hồi trung bình",
-   "gia_tri": "1.46",
+   "gia_tri": "1.43",
    "muc_tieu": "1",
    "chieu": "max",
    "don_vi": "giờ",
@@ -66,7 +66,7 @@ window.DATA={
   },
   {
    "chi_so": "Tỷ lệ trả lời trong 12 giờ",
-   "gia_tri": "95.91",
+   "gia_tri": "95.88",
    "muc_tieu": "85",
    "chieu": "min",
    "don_vi": "%",
@@ -74,7 +74,7 @@ window.DATA={
   },
   {
    "chi_so": "Tỷ lệ hài lòng qua chat",
-   "gia_tri": "72.73",
+   "gia_tri": "73.42",
    "muc_tieu": "70",
    "chieu": "min",
    "don_vi": "%",
@@ -117,6 +117,12 @@ window.DATA={
    "gui_muon_pct": "15.87",
    "gui_nhanh_pct": "83.88",
    "phan_hoi_gio": "1.46"
+  },
+  {
+   "ngay": "2026-11-28",
+   "gui_muon_pct": "15.87",
+   "gui_nhanh_pct": "83.88",
+   "phan_hoi_gio": "1.43"
   }
  ],
  "issues": [
@@ -314,7 +320,7 @@ window.DATA={
   }
  ],
  "meta": {
-  "ngay_du_lieu": "27/11/2026",
+  "ngay_du_lieu": "28/11/2026",
   "ghi_chu_muon": "86"
  }
 };
